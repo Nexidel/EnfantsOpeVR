@@ -7,6 +7,8 @@
     <title>Children Survey</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- CSS Mobile -->
+    <!-- Remettre media='screen and (max-width: 767px)' quand on fonction JS
+            et qu'on n'ai plus qu'à ce concntrer sur CSS (Mobile First) -->
     <link rel='stylesheet' type='text/css' media='screen' href='css/small.css'>
     <!-- CSS Tablette -->
     <link rel='stylesheet' media='screen and (min-width: 768px) and (max-width: 992px)' href='css/medium.css'>
@@ -73,13 +75,8 @@
                 <input type="button" id="changeDraw" value="showDraw" onclick="showDraw()"></input>
                 <input type="button" id="changeText" value="showText" onclick="showText()"></input>
             </div>
-            <!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/button -->
-            <!-- Canvas avec Couleur et Taille -->
-            <!--  <div class="toolbar">
-                <input type="color" aria-label="Sélectionner la couleur du crayon">
-                <input type="range" min="2" max="50" value="30" aria-label="Sélectionner la taille de la pointe du crayon"><span class="output">30</span>
-                <input type="button" value="Réinitialiser le canevas">
-            </div> -->
+            <!-- https://dev.opera.com/articles/html5-canvas-painting/ -->
+            <!-- Options & Code du Canvas -->
             <div class="flex">
                 <canvas id="canvas"></canvas>
                 <textarea name="text_Area" id="textArea" placeholder="Write here!"></textarea>

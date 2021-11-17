@@ -1,5 +1,5 @@
-/*  https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/button */
-/* Canvas avec couleur et taille */
+/*  https://dev.opera.com/articles/html5-canvas-painting/ */
+/* Options & Code du Canvas */
 
 function moveDrawligne(oEvent) {
     var oCanvas = oEvent.currentTarget,

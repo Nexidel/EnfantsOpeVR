@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Children Survey</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- CSS Mobile -->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/small.css'>
+    <!-- CSS Tablette -->
+    <link rel='stylesheet' media='screen and (min-width: 768px) and (max-width: 992px)' href='css/medium.css'>
+    <!-- CSS Desktop -->
+    <link rel='stylesheet' media='screen and (min-width: 993px)' href='css/style.css'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="JavaScript/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Children under 12 years old survey [1][SC2][SC3]</h1>
+    </header>
+
+    <main>
+        <form action="">
+            <h2>Before Starting :</h2>
+            <label for="Q1">1. How do you feel about using these goggles to watch a video today?</label> <br />
+            <div>
+                <input class="angryFace" type="button">
+                <input class="neutralFace" type="button">
+                <input class="happyFace" type="button">
+            </div>
+            <h2>At the end of VR :</h2>
+            <label for="Q2">2. How much did you like using these goggles today?</label> <br />
+            <div>
+                <input class="angryFace" type="button">
+                <input class="neutralFace" type="button">
+                <input class="happyFace" type="button">
+            </div>
+            <label for="Q3">3. Next time you come to the hospital, would you like to use these goggles again?</label>
+            <br />
+            <div>
+                <input class="badThumb" type="button">
+                <input class="hesitatingThumb" type="button">
+                <input class="goodThumb" type="button">
+            </div>
+            <label for="Q4">4. Compare this injection visit to the hospital with your rpevious one, how did time pass?
+            </label> <br />
+            <div>
+                <input class="slowTime" type="button">
+                <input class="equalTime" type="button">
+                <input class="fastTime" type="button">
+            </div>
+            <label for="Q5">5. How did you feel during this injection visit in comparaison with your previous one?
+                <div>
+                    <input class="feelsBad" type="button">
+                    <input class="neutralFace" type="button">
+                    <input class="feelsGreat" type="button">
+                </div>
+            </label>
+            <label for="Q6">6. Would you want your friends to use these goggles if they come to the hospital?</label>
+            <br />
+            <div>
+                <input class="badThumb" type="button">
+                <input class="hesitatingThumb" type="button">
+                <input class="goodThumb" type="button">
+            </div>
+            <label for="Q7">7. If one of your friends asked you how your experience with the goggles was like today, how
+                would you describe it to them?
+                <br /><i>You can draw or write a few sentence</i><br /></label> <br />
+            <div class="flex">
+                <input type="button" id="changeDraw" value="showDraw" onclick="showDraw()"></input>
+                <input type="button" id="changeText" value="showText" onclick="showText()"></input>
+            </div>
+            <!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/button -->
+            <!-- Canvas avec Couleur et Taille -->
+            <!--  <div class="toolbar">
+                <input type="color" aria-label="Sélectionner la couleur du crayon">
+                <input type="range" min="2" max="50" value="30" aria-label="Sélectionner la taille de la pointe du crayon"><span class="output">30</span>
+                <input type="button" value="Réinitialiser le canevas">
+            </div> -->
+            <div class="flex">
+                <canvas id="canvas"></canvas>
+                <textarea name="text_Area" id="textArea" placeholder="Write here!"></textarea>
+            </div>
+            <div>
+                <input type="button" id="btn_clear" value="Nettoyer"></input> <br />
+            </div>
+        </form>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+   input {
+       background-color: white;
+   }
+   
+   .angryFace {
+       background-image: url(../images/angryFace.png);
+       background-size: cover;
+       background-color: none;
+       border: none;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .neutralFace {
+       background-image: url(../images/neutralFace.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .happyFace {
+       background-image: url(../images/happyFace.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .badThumb {
+       background-image: url(../images/badThumb.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .hesitatingThumb {
+       background-image: url(../images/hesitatingThumb.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .goodThumb {
+       background-image: url(../images/goodThumb.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .feelsBad {
+       background-image: url(../images/feelsBad.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .feelsGreat {
+       background-image: url(../images/feelsGreat.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .slowTime {
+       background-image: url(../images/slowTime.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .equalTime {
+       background-image: url(../images/equalTime.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .fastTime {
+       background-image: url(../images/fastTime.png);
+       background-size: cover;
+       width: 50px;
+       height: 50px;
+   }
+   
+   .flex {
+       display: flex;
+   }
+   
+   #canvas,
+   #textArea {
+       width: 500px;
+       height: 200px;
+       border: 1px solid #000000;
+   }
+   
+   #textArea {
+       display: none;
+   }

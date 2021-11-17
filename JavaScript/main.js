@@ -1,6 +1,9 @@
 /*  https://dev.opera.com/articles/html5-canvas-painting/ */
 /* Options & Code du Canvas */
 
+
+/* JS Canvas ------------------------------------------------------------------------------------ */
+
 function moveDrawligne(oEvent) {
     var oCanvas = oEvent.currentTarget,
         oCtx = null,
@@ -75,6 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("btn_clear").addEventListener("click", nettoyer);
 });
 
+/* ---------------------------------------------------------------------------------------------- */
+
+/* fonction show canvas or areatext*/
+
 function showDraw() {
     var draw = document.getElementById("canvas");
     var text = document.getElementById("textArea");
@@ -92,3 +99,5 @@ function showText() {
     draw.style.display = "none"
     clear.style.display = "none"
 }
+
+/* ---------------------------------------------------------------------------------------------- */

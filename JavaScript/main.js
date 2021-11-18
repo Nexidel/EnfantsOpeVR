@@ -1,81 +1,89 @@
-/*  https://dev.opera.com/articles/html5-canvas-painting/ */
-/* Options & Code du Canvas */
+/**
+ * /*  https://dev.opera.com/articles/html5-canvas-painting/
+ *
+ * @format
+ */
 
+/* Options & Code du Canvas */
 
 /* JS Canvas ------------------------------------------------------------------------------------ */
 
 function moveDrawligne(oEvent) {
-    var oCanvas = oEvent.currentTarget,
-        oCtx = null,
-        oPos = null;
-    if (oCanvas.bDraw == false) {
-        return false;
-    }
-    oPos = getPosition(oEvent, oCanvas);
-    oCtx = oCanvas.getContext('2d');
+  var oCanvas = oEvent.currentTarget,
+    oCtx = null,
+    oPos = null;
+  if (oCanvas.bDraw == false) {
+    return false;
+  }
+  oPos = getPosition(oEvent, oCanvas);
+  oCtx = oCanvas.getContext("2d");
 
-    //dessine
-    oCtx.strokeStyle = '#000000';
-    oCtx.lineWidth = 2;
-    oCtx.beginPath();
-    oCtx.moveTo((oCanvas.posX), oCanvas.posY);
-    oCtx.lineTo(oPos.posX, oPos.posY);
-    oCtx.stroke();
+  //dessine
+  oCtx.strokeStyle = "#000000";
+  oCtx.lineWidth = 2;
+  oCtx.beginPath();
+  oCtx.moveTo(oCanvas.posX, oCanvas.posY);
+  oCtx.lineTo(oPos.posX, oPos.posY);
+  oCtx.stroke();
 
-    oCanvas.posX = oPos.posX;
-    oCanvas.posY = oPos.posY;
+  oCanvas.posX = oPos.posX;
+  oCanvas.posY = oPos.posY;
 }
 
 function getPosition(oEvent, oCanvas) {
-    var oRect = oCanvas.getBoundingClientRect(),
-        oEventEle = oEvent.changedTouches ? oEvent.changedTouches[0] : oEvent;
-    return {
-        posX: (oEventEle.clientX - oRect.left) / (oRect.right - oRect.left) * oCanvas.width,
-        posY: (oEventEle.clientY - oRect.top) / (oRect.bottom - oRect.top) * oCanvas.height
-    };
+  var oRect = oCanvas.getBoundingClientRect(),
+    oEventEle = oEvent.changedTouches ? oEvent.changedTouches[0] : oEvent;
+  return {
+    posX:
+      ((oEventEle.clientX - oRect.left) / (oRect.right - oRect.left)) *
+      oCanvas.width,
+    posY:
+      ((oEventEle.clientY - oRect.top) / (oRect.bottom - oRect.top)) *
+      oCanvas.height,
+  };
 }
 
 function downDrawligne(oEvent) {
-    oEvent.preventDefault();
-    var oCanvas = oEvent.currentTarget,
-        oPos = getPosition(oEvent, oCanvas);
-    oCanvas.posX = oPos.posX;
-    oCanvas.posY = oPos.posY;
-    oCanvas.bDraw = true;
-    capturer(false);
+  oEvent.preventDefault();
+  var oCanvas = oEvent.currentTarget,
+    oPos = getPosition(oEvent, oCanvas);
+  oCanvas.posX = oPos.posX;
+  oCanvas.posY = oPos.posY;
+  oCanvas.bDraw = true;
+  capturer(false);
 }
 
 function upDrawligne(oEvent) {
-    var oCanvas = oEvent.currentTarget;
-    oCanvas.bDraw = false;
-    capturer(true);
+  var oCanvas = oEvent.currentTarget;
+  oCanvas.bDraw = false;
+  capturer(true);
 }
 
 function initCanvas() {
-    var oCanvas = document.getElementById("canvas");
-    oCanvas.bDraw = false;
-    oCanvas.width = 200;
-    oCanvas.height = 150;
-    oCtx = oCanvas.getContext('2d');
+  var oCanvas = document.getElementById("canvas");
+  oCanvas.bDraw = false;
+  oCanvas.width = 200;
+  oCanvas.height = 150;
+  oCtx = oCanvas.getContext("2d");
 
-    oCanvas.addEventListener("mousedown", downDrawligne);
-    oCanvas.addEventListener("mouseup", upDrawligne);
-    oCanvas.addEventListener("mousemove", moveDrawligne);
-    oCanvas.addEventListener("touchstart", downDrawligne);
-    oCanvas.addEventListener("touchend", upDrawligne);
-    oCanvas.addEventListener("touchmove", moveDrawligne);
+  oCanvas.addEventListener("mousedown", downDrawligne);
+  oCanvas.addEventListener("mouseup", upDrawligne);
+  oCanvas.addEventListener("mousemove", moveDrawligne);
+  oCanvas.addEventListener("touchstart", downDrawligne);
+  oCanvas.addEventListener("touchend", upDrawligne);
+  oCanvas.addEventListener("touchmove", moveDrawligne);
 }
 
 function nettoyer(oEvent) {
-    var oCanvas = document.getElementById("canvas"),
-        oCtx = oCanvas.getContext('2d');
-    oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
-    capturer(false);
+  var oCanvas = document.getElementById("canvas"),
+    oCtx = oCanvas.getContext("2d");
+  oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
+  capturer(false);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    initCanvas();
-    document.getElementById("btn_clear").addEventListener("click", nettoyer);
+document.addEventListener("DOMContentLoaded", function () {
+  initCanvas();
+  document.getElementById("btn_clear").addEventListener("click", nettoyer);
 });
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -83,21 +91,74 @@ document.addEventListener('DOMContentLoaded', function() {
 /* fonction show canvas or areatext*/
 
 function showDraw() {
-    var draw = document.getElementById("canvas");
-    var text = document.getElementById("textArea");
-    var clear = document.getElementById("btn_clear");
-    draw.style.display = "block";
-    text.style.display = "none"
-    clear.style.display = "block"
+  var draw = document.getElementById("canvas");
+  var text = document.getElementById("textArea");
+  var clear = document.getElementById("btn_clear");
+  draw.style.display = "block";
+  text.style.display = "none";
+  clear.style.display = "block";
 }
 
 function showText() {
-    var text = document.getElementById("textArea");
-    var draw = document.getElementById("canvas");
-    var clear = document.getElementById("btn_clear");
-    text.style.display = "block";
-    draw.style.display = "none"
-    clear.style.display = "none"
+  var text = document.getElementById("textArea");
+  var draw = document.getElementById("canvas");
+  var clear = document.getElementById("btn_clear");
+  text.style.display = "block";
+  draw.style.display = "none";
+  clear.style.display = "none";
 }
 
 /* ---------------------------------------------------------------------------------------------- */
+
+const form = document.getElementById("form");
+const input1 = document.getElementsByClassName("Q1");
+const input2 = document.getElementsByClassName("Q2");
+const input3 = document.getElementsByClassName("Q3");
+const input4 = document.getElementsByClassName("Q4");
+const input5 = document.getElementsByClassName("Q5");
+const input6 = document.getElementsByClassName("Q6");
+
+const displayError = document.querySelector(".text-danger");
+
+const STATE = {
+  input1: "",
+  input2: "",
+  input3: "",
+  input4: "",
+  input5: "",
+  input6: "",
+};
+
+const initState = () => {
+  STATE.input1;
+  STATE.input2;
+  STATE.input3;
+  STATE.input4;
+  STATE.input5;
+  STATE.input6;
+};
+
+const isValidDOM = () => {
+  displayError.className = "text-danger d-none";
+};
+
+const isNotValidDOM = () => {
+  displayError.className = "text-danger d-block";
+};
+
+const validation = () => {
+  STATE.input1.length !== 0 ? isValidDOM(input1) : isNotValidDOM(input1);
+  STATE.input2.length !== 0 ? isValidDOM(input2) : isNotValidDOM(input2);
+  STATE.input3.length !== 0 ? isValidDOM(input3) : isNotValidDOM(input3);
+  STATE.input4.length !== 0 ? isValidDOM(input4) : isNotValidDOM(input4);
+  STATE.input5.length !== 0 ? isValidDOM(input5) : isNotValidDOM(input5);
+  STATE.input6.length !== 0 ? isValidDOM(input6) : isNotValidDOM(input6);
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  initState();
+  validation();
+
+  console.log(STATE);
+});

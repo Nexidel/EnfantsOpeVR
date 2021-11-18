@@ -228,11 +228,14 @@
 
 #canvas,
 #textArea {
-    width: 500px;
-    height: 200px;
     border: 1px solid #000000;
 }
 
+#canvas {
+    height: 300px;
+}
+
 #textArea {
+    height: 200px;
     display: none;
 }

@@ -15,112 +15,115 @@
     <!-- CSS Desktop -->
     <link rel='stylesheet' media='screen and (min-width: 993px)' href='css/style.css'>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="JavaScript/main.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Children under 12 years old survey [1][SC2][SC3]</h1>
+        <div class="container-lg text-center mb-4 pt-4">
+            <h1>Children under 12 years old survey [1][SC2][SC3]</h1>
+        </div>
     </header>
 
     <main>
-        <div class="container">
-            <form action="" method="">
-                <h2>Before Starting :</h2>
-                <div class="card text-start w-50">
-                    <div class="card-header">1. How do you feel about using these goggles to watch a video today?</div>
-                    <div class="card-body Question noselect">
-                        <input class="angryFace" type="radio" id="angryQ1" name="Q1">
-                        <label for="angryQ1"></label>
-                        <input class="neutralFace" type="radio" id="neutralQ1" name="Q1">
-                        <label for="neutralQ1"></label>
-                        <input class="happyFace" type="radio" id="happyQ1" name="Q1">
-                        <label for="happyQ1"></label>
-                    </div>
+        <form class="container-lg needs-validation mb-3" novalidate>
+            <h2>Before Starting :</h2>
+            <div class="card text-start w-100 mb-1">
+                <div class="card-header">1. How do you feel about using these goggles to watch a video today?</div>
+                <div class="card-body d-flex text-center justify-content-around form-check Question noselect">
+                    <input class="angryFace" type="radio" id="angryQ1" name="Q1">
+                    <label for="angryQ1"></label>
+                    <input class="neutralFace" type="radio" id="neutralQ1" name="Q1">
+                    <label for="neutralQ1"></label>
+                    <input class="happyFace" type="radio" id="happyQ1" name="Q1">
+                    <label for="happyQ1"></label>
                 </div>
-                <h2>At the end of VR :</h2>
-                <div class="card text-start w-50">
-                    <div class="card-header">2. How much did you like using these goggles today?</div>
-                    <div class="card-body Question noselect">
-                        <input class="angryFace" type="radio" id="angryQ2" name="Q2">
-                        <label for="angryQ2"></label>
-                        <input class="neutralFace" type="radio" id="neutralQ2" name="Q2">
-                        <label for="neutralQ2"></label>
-                        <input class="happyFace" type="radio" id="happyQ2" name="Q2">
-                        <label for="happyQ2"></label>
-                    </div>
+            </div>
+            <h2>At the end of VR :</h2>
+            <div class="card text-start w-100 mb-3">
+                <div class="card-header">2. How much did you like using these goggles today?</div>
+                <div class="card-body d-flex text-center justify-content-around  Question noselect">
+                    <input class="angryFace" type="radio" id="angryQ2" name="Q2">
+                    <label for="angryQ2"></label>
+                    <input class="neutralFace" type="radio" id="neutralQ2" name="Q2">
+                    <label for="neutralQ2"></label>
+                    <input class="happyFace" type="radio" id="happyQ2" name="Q2">
+                    <label for="happyQ2"></label>
                 </div>
-                <div class="card text-start w-50">
-                    <div class="card-header">3. Next time you come to the hospital, would you like to use these goggles again?</div>
-                    <div class="card-body Question noselect">
-                        <input class="badThumb" type="radio" id="badThumbQ3" name="Q3">
-                        <label for="badThumbQ3"></label>
-                        <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ3" name="Q3">
-                        <label for="hesitatingThumbQ3"></label>
-                        <input class="goodThumb" type="radio" id="goodThumbQ3" name="Q3">
-                        <label for="goodThumbQ3"></label>
-                    </div>
+            </div>
+            <div class="card text-start w-100 mb-3">
+                <div class="card-header">3. Next time you come to the hospital, would you like to use these goggles again?</div>
+                <div class="card-body d-flex text-center justify-content-around  Question noselect">
+                    <input class="badThumb" type="radio" id="badThumbQ3" name="Q3">
+                    <label for="badThumbQ3"></label>
+                    <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ3" name="Q3">
+                    <label for="hesitatingThumbQ3"></label>
+                    <input class="goodThumb" type="radio" id="goodThumbQ3" name="Q3">
+                    <label for="goodThumbQ3"></label>
                 </div>
-                <div class="card text-start w-50">
-                    <div class="card-header">4. Compare this injection visit to the hospital with your rpevious one, how did time pass?</div>
-                    <div class="card-body Question noselect">
-                        <input class="slowTime" type="radio" id="slowTimeQ4" name="Q4">
-                        <label for="slowTimeQ4"></label>
-                        <input class="equalTime" type="radio" id="equalTimeQ4" name="Q4">
-                        <label for="equalTimeQ4"></label>
-                        <input class="fastTime" type="radio" id="fastTimeQ4" name="Q4">
-                        <label for="fastTimeQ4"></label>
-                    </div>
+            </div>
+            <div class="card text-start w-100 mb-3">
+                <div class="card-header">4. Compare this injection visit to the hospital with your previous one, how did time pass?</div>
+                <div class="card-body d-flex text-center justify-content-around  Question noselect">
+                    <input class="slowTime" type="radio" id="slowTimeQ4" name="Q4">
+                    <label for="slowTimeQ4"></label>
+                    <input class="equalTime" type="radio" id="equalTimeQ4" name="Q4">
+                    <label for="equalTimeQ4"></label>
+                    <input class="fastTime" type="radio" id="fastTimeQ4" name="Q4">
+                    <label for="fastTimeQ4"></label>
                 </div>
-                <div class="card text-start w-50">
-                    <div class="card-header">5. How did you feel during this injection visit in comparaison with your previous one?</div>
-                    <div class="card-body Question noselect">
-                        <input class="feelsBad" type="radio" id="feelsBadQ5" name="Q5">
-                        <label for="feelsBadQ5"></label>
-                        <input class="neutralFace" type="radio" id="neutralFaceQ5" name="Q5">
-                        <label for="neutralFaceQ5"></label>
-                        <input class="feelsGreat" type="radio" id="feelsGreatQ5" name="Q5">
-                        <label for="feelsGreatQ5"></label>
-                    </div>
+            </div>
+            <div class="card text-start w-100 mb-3">
+                <div class="card-header">5. How did you feel during this injection visit in comparaison with your previous one?</div>
+                <div class="card-body d-flex text-center justify-content-around  Question noselect">
+                    <input class="feelsBad" type="radio" id="feelsBadQ5" name="Q5">
+                    <label for="feelsBadQ5"></label>
+                    <input class="neutralFace" type="radio" id="neutralFaceQ5" name="Q5">
+                    <label for="neutralFaceQ5"></label>
+                    <input class="feelsGreat" type="radio" id="feelsGreatQ5" name="Q5">
+                    <label for="feelsGreatQ5"></label>
                 </div>
-                <div class="card text-start w-50">
-                    <div class="card-header">6. Would you want your friends to use these goggles if they come to the hospital?</div>
-                    <div class="card-body Question noselect">
-                        <input class="badThumb" type="radio" id="badThumbQ6" name="Q6">
-                        <label for="badThumbQ6"></label>
-                        <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ6" name="Q6">
-                        <label for="hesitatingThumbQ6"></label>
-                        <input class="goodThumb" type="radio" id="goodThumbQ6" name="Q6">
-                        <label for="goodThumbQ6"></label>
-                    </div>
+            </div>
+            <div class="card text-start w-100 mb-3">
+                <div class="card-header">6. Would you want your friends to use these goggles if they come to the hospital?</div>
+                <div class="card-body d-flex text-center justify-content-around  Question noselect">
+                    <input class="badThumb" type="radio" id="badThumbQ6" name="Q6">
+                    <label for="badThumbQ6"></label>
+                    <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ6" name="Q6">
+                    <label for="hesitatingThumbQ6"></label>
+                    <input class="goodThumb" type="radio" id="goodThumbQ6" name="Q6">
+                    <label for="goodThumbQ6"></label>
                 </div>
-                <div class="card text-start w-50">
-                    <div class="card-header">7. If one of your friends asked you how your experience with the goggles was like today, how would you describe it to them? <br />
-                        <i>You can draw or write a few sentence</i></div>
-                    <div class="d-flex">
-                        <input type="button" id="changeDraw" value="showDraw" onclick="showDraw()"></input>
-                        <input type="button" id="changeText" value="showText" onclick="showText()"></input>
-                    </div>
-                    <!-- https://dev.opera.com/articles/html5-canvas-painting/ -->
-                    <!-- Options & Code du Canvas -->
-                    <div class="d-flex">
-                        <canvas id="canvas"></canvas>
-                        <textarea name="text_Area" id="textArea" placeholder="Write here!"></textarea>
-                    </div>
-                    <div>
-                        <input type="button" id="btn_clear" value="Nettoyer"></input>
-                    </div>
+            </div>
+            <div class="card text-start w-100 mb-3">
+                <div class="card-header">7. If one of your friends asked you how your experience with the goggles was like today, how would you describe it to them? <br />
+                    <i>You can draw or write a few sentence</i></div>
+                <div class="card-body d-flex text-center justify-content-around input-group-lg">
+                    <input type="button" id="changeDraw" value="showDraw" onclick="showDraw()"></input>
+                    <input type="button" id="changeText" value="showText" onclick="showText()"></input>
                 </div>
-            </form>
-        </div>
+                <!-- https://dev.opera.com/articles/html5-canvas-painting/ -->
+                <!-- Options & Code du Canvas -->
+                <div class="card-body d-flex text-center justify-content-around">
+                    <canvas class="w-75" id="canvas"></canvas>
+                    <textarea class="w-75" name="text_Area" id="textArea" placeholder="Write here!"></textarea>
+                </div>
+                <div class="card-body d-flex align-self-center">
+                    <input type="button" id="btn_clear" value="Erase Drawing"></input>
+                </div>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary align-items-end">Submit</button>
+            </div>
+        </form>
     </main>
 
     <footer>
-
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 

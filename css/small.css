@@ -1,113 +1,242 @@
-     .angryFace {
-         background-image: url(../images/angryFace.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .neutralFace {
-         background-image: url(../images/neutralFace.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .happyFace {
-         background-image: url(../images/happyFace.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .badThumb {
-         background-image: url(../images/badThumb.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .hesitatingThumb {
-         background-image: url(../images/hesitatingThumb.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .goodThumb {
-         background-image: url(../images/goodThumb.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .feelsBad {
-         background-image: url(../images/feelsBad.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .feelsGreat {
-         background-image: url(../images/feelsGreat.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .slowTime {
-         background-image: url(../images/slowTime.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .equalTime {
-         background-image: url(../images/equalTime.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .fastTime {
-         background-image: url(../images/fastTime.png);
-         background-size: cover;
-         background-color: white;
-         border: none;
-         width: 50px;
-         height: 50px;
-     }
-     
-     .flex {
-         display: flex;
-     }
-     
-     #canvas,
-     #textArea {
-         width: 500px;
-         height: 200px;
-         border: 1px solid #000000;
-     }
-     
-     #textArea {
-         display: none;
-     }
+.flex {
+    display: flex;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.angryFace,
+.neutralFace,
+.happyFace,
+.badThumb,
+.hesitatingThumb,
+.goodThumb,
+.slowTime,
+.equalTime,
+.fastTime,
+.feelsBad,
+.feelsGreat {
+    display: none;
+}
+
+.angryFace+label {
+    background: url('../images/angryFace.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.angryFace:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.neutralFace+label {
+    background: url('../images/neutralFace.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.neutralFace:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.happyFace+label {
+    background: url('../images/happyFace.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.happyFace:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.badThumb+label {
+    background: url('../images/badThumb.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.badThumb:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.hesitatingThumb+label {
+    background: url('../images/hesitatingThumb.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.hesitatingThumb:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.goodThumb+label {
+    background: url('../images/goodThumb.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.goodThumb:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.slowTime+label {
+    background: url('../images/slowTime.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.slowTime:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.equalTime+label {
+    background: url('../images/equalTime.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.equalTime:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.fastTime+label {
+    background: url('../images/fastTime.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.fastTime:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.feelsBad+label {
+    background: url('../images/feelsBad.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.feelsBad:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.feelsGreat+label {
+    background: url('../images/feelsGreat.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+.feelsGreat:checked+label {
+    background: url('../images/test.png') no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    cursor: pointer;
+}
+
+#canvas,
+#textArea {
+    width: 500px;
+    height: 200px;
+    border: 1px solid #000000;
+}
+
+#textArea {
+    display: none;
+}

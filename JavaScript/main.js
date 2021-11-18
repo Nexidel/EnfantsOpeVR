@@ -111,54 +111,101 @@ function showText() {
 /* ---------------------------------------------------------------------------------------------- */
 
 const form = document.getElementById("form");
-const input1 = document.getElementsByClassName("Q1");
-const input2 = document.getElementsByClassName("Q2");
-const input3 = document.getElementsByClassName("Q3");
-const input4 = document.getElementsByClassName("Q4");
-const input5 = document.getElementsByClassName("Q5");
-const input6 = document.getElementsByClassName("Q6");
+const input1 = document.getElementsByName("Q1");
+const input2 = document.getElementsByName("Q2");
+const input3 = document.getElementsByName("Q3");
+const input4 = document.getElementsByName("Q4");
+const input5 = document.getElementsByName("Q5");
+const input6 = document.getElementsByName("Q6");
 
-const displayError = document.querySelector(".text-danger");
+const Error1 = document.getElementById('error-1')
+const Error2 = document.getElementById('error-2')
+const Error3 = document.getElementById('error-3')
+const Error4 = document.getElementById('error-4')
+const Error5 = document.getElementById('error-5')
+const Error6 = document.getElementById('error-6')
 
 const STATE = {
-  input1: "",
-  input2: "",
-  input3: "",
-  input4: "",
-  input5: "",
-  input6: "",
+  Input1: "",
+  Input2: "",
+  Input3: "",
+  Input4: "",
+  Input5: "",
+  Input6: "",
 };
 
 const initState = () => {
-  STATE.input1;
-  STATE.input2;
-  STATE.input3;
-  STATE.input4;
-  STATE.input5;
-  STATE.input6;
+  STATE.Input1 = [];
+  STATE.Input2 = [];
+  STATE.Input3 = [];
+  STATE.Input4 = [];
+  STATE.Input5 = [];
+  STATE.Input6 = [];
 };
 
-const isValidDOM = () => {
-  displayError.className = "text-danger d-none";
-};
+const input1Validation = () => {
+  for (var i = 0, length = input1.length; i < length; i++) {
+    if (input1[i].checked) {
+      STATE.Input1.push(input1[i].value);
+    }
+  }
+  STATE.Input1.length > 0 ? Error1.className = "text-danger d-none" : Error1.className = "text-danger d-block";
+}
+const input2Validation = () => {
+  for (var i = 0, length = input2.length; i < length; i++) {
+    if (input2[i].checked) {
+      STATE.Input2.push(input2[i].value);
+    }
+  }
+  STATE.Input2.length > 0 ? Error2.className = "text-danger d-none" : Error2.className = "text-danger d-block";
 
-const isNotValidDOM = () => {
-  displayError.className = "text-danger d-block";
-};
+}
+  const input3Validation = () => {
+  for (var i = 0, length = input3.length; i < length; i++) {
+    if (input3[i].checked) {
+      STATE.Input3.push(input3[i].value);  
+    }
+  }
+  STATE.Input3.length > 0 ? Error3.className = "text-danger d-none" : Error3.className = "text-danger d-block";
 
-const validation = () => {
-  STATE.input1.length !== 0 ? isValidDOM(input1) : isNotValidDOM(input1);
-  STATE.input2.length !== 0 ? isValidDOM(input2) : isNotValidDOM(input2);
-  STATE.input3.length !== 0 ? isValidDOM(input3) : isNotValidDOM(input3);
-  STATE.input4.length !== 0 ? isValidDOM(input4) : isNotValidDOM(input4);
-  STATE.input5.length !== 0 ? isValidDOM(input5) : isNotValidDOM(input5);
-  STATE.input6.length !== 0 ? isValidDOM(input6) : isNotValidDOM(input6);
-};
+}
+  const input4Validation = () => {
+  for (var i = 0, length = input4.length; i < length; i++) {
+    if (input4[i].checked) {
+      STATE.Input4.push(input4[i].value); 
+    }
+  }
+  STATE.Input4.length > 0 ? Error4.className = "text-danger d-none" : Error4.className = "text-danger d-block";
+
+}
+  const input5Validation = () => {
+  for (var i = 0, length = input5.length; i < length; i++) {
+    if (input5[i].checked) {
+      STATE.Input5.push(input5[i].value);    
+    }
+  }
+  STATE.Input5.length > 0 ? Error5.className = "text-danger d-none" : Error5.className = "text-danger d-block";
+
+}
+  const input6Validation = () => {
+  for (var i = 0, length = input6.length; i < length; i++) {
+    if (input6[i].checked) {
+      STATE.Input6.push(input6[i].value);
+    }
+  }
+  STATE.Input6.length > 0 ? Error6.className = "text-danger d-none" : Error6.className = "text-danger d-block";
+}
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   initState();
-  validation();
+  input1Validation();
+  input2Validation();
+  input3Validation();
+  input4Validation();
+  input5Validation();
+  input6Validation();
 
   console.log(STATE);
 });

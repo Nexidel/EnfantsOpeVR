@@ -118,12 +118,25 @@ const input4 = document.getElementsByName("Q4");
 const input5 = document.getElementsByName("Q5");
 const input6 = document.getElementsByName("Q6");
 
-const Error1 = document.getElementById('error-1')
-const Error2 = document.getElementById('error-2')
-const Error3 = document.getElementById('error-3')
-const Error4 = document.getElementById('error-4')
-const Error5 = document.getElementById('error-5')
-const Error6 = document.getElementById('error-6')
+const signature = document.getElementById("textArea");
+const signaturePencil = document.getElementById("btn_clear");
+
+const Error1 = document.getElementById("error-1");
+const Error2 = document.getElementById("error-2");
+const Error3 = document.getElementById("error-3");
+const Error4 = document.getElementById("error-4");
+const Error5 = document.getElementById("error-5");
+const Error6 = document.getElementById("error-6");
+
+const Error7 = document.getElementById("error-7");
+
+const Card1 = document.getElementById("card1");
+const Card2 = document.getElementById("card2");
+const Card3 = document.getElementById("card3");
+const Card4 = document.getElementById("card4");
+const Card5 = document.getElementById("card5");
+const Card6 = document.getElementById("card6");
+const Card7 = document.getElementById("card7");
 
 const STATE = {
   Input1: "",
@@ -132,6 +145,9 @@ const STATE = {
   Input4: "",
   Input5: "",
   Input6: "",
+
+  Signature: "",
+  SignaturePencil: "",
 };
 
 const initState = () => {
@@ -141,71 +157,127 @@ const initState = () => {
   STATE.Input4 = [];
   STATE.Input5 = [];
   STATE.Input6 = [];
+
+  STATE.Signature = [];
+  STATE.SignaturePencil = [];
 };
 
-const input1Validation = () => {
+const Input1Validation = () => {
   for (var i = 0, length = input1.length; i < length; i++) {
     if (input1[i].checked) {
       STATE.Input1.push(input1[i].value);
     }
   }
-  STATE.Input1.length > 0 ? Error1.className = "text-danger d-none" : Error1.className = "text-danger d-block";
-}
-const input2Validation = () => {
+  if (STATE.Input1.length > 0) {
+    Error1.className = "text-danger d-none";
+    Card1.classList.add("border-success");
+    Card1.classList.remove("border-danger");
+  } else {
+    Error1.className = "text-danger d-block";
+    Card1.classList.remove("border-success");
+    Card1.classList.add("border-danger");
+  }
+};
+
+const Input2Validation = () => {
   for (var i = 0, length = input2.length; i < length; i++) {
     if (input2[i].checked) {
       STATE.Input2.push(input2[i].value);
     }
   }
-  STATE.Input2.length > 0 ? Error2.className = "text-danger d-none" : Error2.className = "text-danger d-block";
-
-}
-  const input3Validation = () => {
+  if (STATE.Input2.length > 0) {
+    Error2.className = "text-danger d-none";
+    Card2.classList.add("border-success");
+    Card2.classList.remove("border-danger");
+  } else {
+    Error2.className = "text-danger d-block";
+    Card2.classList.remove("border-success");
+    Card2.classList.add("border-danger");
+  }
+};
+const Input3Validation = () => {
   for (var i = 0, length = input3.length; i < length; i++) {
     if (input3[i].checked) {
-      STATE.Input3.push(input3[i].value);  
+      STATE.Input3.push(input3[i].value);
     }
   }
-  STATE.Input3.length > 0 ? Error3.className = "text-danger d-none" : Error3.className = "text-danger d-block";
-
-}
-  const input4Validation = () => {
+  if (STATE.Input3.length > 0) {
+    Error3.className = "text-danger d-none";
+    Card3.classList.add("border-success");
+    Card3.classList.remove("border-danger");
+  } else {
+    Error3.className = "text-danger d-block";
+    Card3.classList.remove("border-success");
+    Card3.classList.add("border-danger");
+  }
+};
+const Input4Validation = () => {
   for (var i = 0, length = input4.length; i < length; i++) {
     if (input4[i].checked) {
-      STATE.Input4.push(input4[i].value); 
+      STATE.Input4.push(input4[i].value);
     }
   }
-  STATE.Input4.length > 0 ? Error4.className = "text-danger d-none" : Error4.className = "text-danger d-block";
-
-}
-  const input5Validation = () => {
+  if (STATE.Input4.length > 0) {
+    Error4.className = "text-danger d-none";
+    Card4.classList.add("border-success");
+    Card4.classList.remove("border-danger");
+  } else {
+    Error4.className = "text-danger d-block";
+    Card4.classList.remove("border-success");
+    Card4.classList.add("border-danger");
+  }
+};
+const Input5Validation = () => {
   for (var i = 0, length = input5.length; i < length; i++) {
     if (input5[i].checked) {
-      STATE.Input5.push(input5[i].value);    
+      STATE.Input5.push(input5[i].value);
     }
   }
-  STATE.Input5.length > 0 ? Error5.className = "text-danger d-none" : Error5.className = "text-danger d-block";
-
-}
-  const input6Validation = () => {
+  if (STATE.Input5.length > 0) {
+    Error5.className = "text-danger d-none";
+    Card5.classList.add("border-success");
+    Card5.classList.remove("border-danger");
+  } else {
+    Error5.className = "text-danger d-block";
+    Card5.classList.remove("border-success");
+    Card5.classList.add("border-danger");
+  }
+};
+const Input6Validation = () => {
   for (var i = 0, length = input6.length; i < length; i++) {
     if (input6[i].checked) {
       STATE.Input6.push(input6[i].value);
     }
   }
-  STATE.Input6.length > 0 ? Error6.className = "text-danger d-none" : Error6.className = "text-danger d-block";
-}
+  if (STATE.Input6.length > 0) {
+    Error6.className = "text-danger d-none";
+    Card6.classList.add("border-success");
+    Card6.classList.remove("border-danger");
+  } else {
+    Error6.className = "text-danger d-block";
+    Card6.classList.remove("border-success");
+    Card6.classList.add("border-danger");
+  }
+};
 
+const Input7Validation = () => {
+  STATE.Signature.length !== 0
+    ? (Error7.className = "text-danger d-none")
+    : (Error7.className = "text-danger d-block");
+  STATE.Signature.push(signature.value);
+};
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  e.stopPropagation()
   initState();
-  input1Validation();
-  input2Validation();
-  input3Validation();
-  input4Validation();
-  input5Validation();
-  input6Validation();
+  Input1Validation();
+  Input2Validation();
+  Input3Validation();
+  Input4Validation();
+  Input5Validation();
+  Input6Validation();
+  Input7Validation();
 
   console.log(STATE);
 });

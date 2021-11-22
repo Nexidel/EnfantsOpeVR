@@ -9,93 +9,93 @@
 /* JS Canvas ------------------------------------------------------------------------------------ */
 
 function moveDrawligne(oEvent) {
-  var oCanvas = oEvent.currentTarget,
-    oCtx = null,
-    oPos = null;
-  if (oCanvas.bDraw == false) {
-    return false;
-  }
-  oPos = getPosition(oEvent, oCanvas);
-  oCtx = oCanvas.getContext("2d");
+    var oCanvas = oEvent.currentTarget,
+        oCtx = null,
+        oPos = null;
+    if (oCanvas.bDraw == false) {
+        return false;
+    }
+    oPos = getPosition(oEvent, oCanvas);
+    oCtx = oCanvas.getContext("2d");
 
-  //dessine
-  oCtx.strokeStyle = "#000000";
-  oCtx.lineWidth = 2;
-  oCtx.beginPath();
-  oCtx.moveTo(oCanvas.posX, oCanvas.posY);
-  oCtx.lineTo(oPos.posX, oPos.posY);
-  oCtx.stroke();
+    //dessine
+    oCtx.strokeStyle = "#000000";
+    oCtx.lineWidth = 2;
+    oCtx.beginPath();
+    oCtx.moveTo(oCanvas.posX, oCanvas.posY);
+    oCtx.lineTo(oPos.posX, oPos.posY);
+    oCtx.stroke();
 
-  oCanvas.posX = oPos.posX;
-  oCanvas.posY = oPos.posY;
+    oCanvas.posX = oPos.posX;
+    oCanvas.posY = oPos.posY;
 }
 
 function getPosition(oEvent, oCanvas) {
-  var oRect = oCanvas.getBoundingClientRect(),
-    oEventEle = oEvent.changedTouches ? oEvent.changedTouches[0] : oEvent;
-  return {
-    posX:
-      ((oEventEle.clientX - oRect.left) / (oRect.right - oRect.left)) *
-      oCanvas.width,
-    posY:
-      ((oEventEle.clientY - oRect.top) / (oRect.bottom - oRect.top)) *
-      oCanvas.height,
-  };
+    var oRect = oCanvas.getBoundingClientRect(),
+        oEventEle = oEvent.changedTouches ? oEvent.changedTouches[0] : oEvent;
+    return {
+        posX:
+            ((oEventEle.clientX - oRect.left) / (oRect.right - oRect.left)) *
+            oCanvas.width,
+        posY:
+            ((oEventEle.clientY - oRect.top) / (oRect.bottom - oRect.top)) *
+            oCanvas.height,
+    };
 }
 
 function downDrawligne(oEvent) {
-  oEvent.preventDefault();
-  var oCanvas = oEvent.currentTarget,
-    oPos = getPosition(oEvent, oCanvas);
-  oCanvas.posX = oPos.posX;
-  oCanvas.posY = oPos.posY;
-  oCanvas.bDraw = true;
-  capturer(false);
+    oEvent.preventDefault();
+    var oCanvas = oEvent.currentTarget,
+        oPos = getPosition(oEvent, oCanvas);
+    oCanvas.posX = oPos.posX;
+    oCanvas.posY = oPos.posY;
+    oCanvas.bDraw = true;
+    capturer(false);
 }
 
 function upDrawligne(oEvent) {
-  var oCanvas = oEvent.currentTarget;
-  oCanvas.bDraw = false;
-  capturer(true);
+    var oCanvas = oEvent.currentTarget;
+    oCanvas.bDraw = false;
+    capturer(true);
 }
 
 function initCanvas() {
-  var oCanvas = document.getElementById("canvas");
-  oCanvas.bDraw = false;
-  oCanvas.width = 200;
-  oCanvas.height = 150;
-  oCtx = oCanvas.getContext("2d");
+    var oCanvas = document.getElementById("canvas");
+    oCanvas.bDraw = false;
+    oCanvas.width = 200;
+    oCanvas.height = 150;
+    oCtx = oCanvas.getContext("2d");
 
-  oCanvas.addEventListener("mousedown", downDrawligne);
-  oCanvas.addEventListener("mouseup", upDrawligne);
-  oCanvas.addEventListener("mousemove", moveDrawligne);
-  oCanvas.addEventListener("touchstart", downDrawligne);
-  oCanvas.addEventListener("touchend", upDrawligne);
-  oCanvas.addEventListener("touchmove", moveDrawligne);
+    oCanvas.addEventListener("mousedown", downDrawligne);
+    oCanvas.addEventListener("mouseup", upDrawligne);
+    oCanvas.addEventListener("mousemove", moveDrawligne);
+    oCanvas.addEventListener("touchstart", downDrawligne);
+    oCanvas.addEventListener("touchend", upDrawligne);
+    oCanvas.addEventListener("touchmove", moveDrawligne);
 }
 
 var oImage = document.createElement("img");
 
 function capturer(bAction) {
-  var oCapture = document.getElementById("canvas");
-  oCapture.innerHTML = "";
-  if (bAction == true) {
-    oCanvas = document.getElementById("canvas");
-    oImage.src = oCanvas.toDataURL("image/png");
-    oCapture.appendChild(oImage);
-  }
+    var oCapture = document.getElementById("canvas");
+    oCapture.innerHTML = "";
+    if (bAction == true) {
+        oCanvas = document.getElementById("canvas");
+        oImage.src = oCanvas.toDataURL("image/png");
+        oCapture.appendChild(oImage);
+    }
 }
 
 function nettoyer(oEvent) {
-  var oCanvas = document.getElementById("canvas"),
-    oCtx = oCanvas.getContext("2d");
-  oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
-  capturer(false);
+    var oCanvas = document.getElementById("canvas"),
+        oCtx = oCanvas.getContext("2d");
+    oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
+    capturer(false);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  initCanvas();
-  document.getElementById("btn_clear").addEventListener("click", nettoyer);
+document.addEventListener("DOMContentLoaded", function() {
+    initCanvas();
+    document.getElementById("btn_clear").addEventListener("click", nettoyer);
 });
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -103,21 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
 /* fonction show canvas or areatext*/
 
 function showDraw() {
-  var draw = document.getElementById("canvas");
-  var text = document.getElementById("textArea");
-  var clear = document.getElementById("btn_clear");
-  draw.style.display = "block";
-  text.style.display = "none";
-  clear.style.display = "block";
+    var draw = document.getElementById("canvas");
+    var text = document.getElementById("textArea");
+    var clear = document.getElementById("btn_clear");
+    draw.style.display = "block";
+    text.style.display = "none";
+    clear.style.display = "block";
 }
 
 function showText() {
-  var text = document.getElementById("textArea");
-  var draw = document.getElementById("canvas");
-  var clear = document.getElementById("btn_clear");
-  text.style.display = "block";
-  draw.style.display = "none";
-  clear.style.display = "none";
+    var text = document.getElementById("textArea");
+    var draw = document.getElementById("canvas");
+    var clear = document.getElementById("btn_clear");
+    text.style.display = "block";
+    draw.style.display = "none";
+    clear.style.display = "none";
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -151,170 +151,170 @@ const Card6 = document.getElementById("card6");
 const Card7 = document.getElementById("card7");
 
 const STATE = {
-  Input1: "",
-  Input2: "",
-  Input3: "",
-  Input4: "",
-  Input5: "",
-  Input6: "",
+    Input1: "",
+    Input2: "",
+    Input3: "",
+    Input4: "",
+    Input5: "",
+    Input6: "",
 
-  Signature: "",
-  SignaturePencil: "",
+    Signature: "",
+    SignaturePencil: "",
 };
 
 const initState = () => {
-  STATE.Input1 = [];
-  STATE.Input2 = [];
-  STATE.Input3 = [];
-  STATE.Input4 = [];
-  STATE.Input5 = [];
-  STATE.Input6 = [];
+    STATE.Input1 = [];
+    STATE.Input2 = [];
+    STATE.Input3 = [];
+    STATE.Input4 = [];
+    STATE.Input5 = [];
+    STATE.Input6 = [];
 
-  STATE.Signature = [];
-  STATE.SignaturePencil = [];
+    STATE.Signature = [];
+    STATE.SignaturePencil = [];
 };
 
 const displayConfirmMessage = () => {
-  const message = document.querySelector(".confirmation");
-  message.style.display = "block";
-  setTimeout(() => {
-    message.style.display = "none";
-  }, 3000);
+    const message = document.querySelector(".confirmation");
+    message.style.display = "block";
+    setTimeout(() => {
+        message.style.display = "none";
+    }, 3000);
 };
 
 const Input1Validation = () => {
-  for (var i = 0, length = input1.length; i < length; i++) {
-    if (input1[i].checked) {
-      STATE.Input1.push(input1[i].value);
+    for (var i = 0, length = input1.length; i < length; i++) {
+        if (input1[i].checked) {
+            STATE.Input1.push(input1[i].value);
+        }
     }
-  }
-  if (STATE.Input1.length > 0) {
-    Error1.className = "text-danger d-none";
-    Card1.classList.add("border-success");
-    Card1.classList.remove("border-danger");
-  } else {
-    Error1.className = "text-danger d-block";
-    Card1.classList.remove("border-success");
-    Card1.classList.add("border-danger");
-  }
-  return true;
+    if (STATE.Input1.length > 0) {
+        Error1.className = "text-danger d-none";
+        Card1.classList.add("border-success");
+        Card1.classList.remove("border-danger");
+    } else {
+        Error1.className = "text-danger d-block";
+        Card1.classList.remove("border-success");
+        Card1.classList.add("border-danger");
+    }
+    return true;
 };
 
 const Input2Validation = () => {
-  for (var i = 0, length = input2.length; i < length; i++) {
-    if (input2[i].checked) {
-      STATE.Input2.push(input2[i].value);
+    for (var i = 0, length = input2.length; i < length; i++) {
+        if (input2[i].checked) {
+            STATE.Input2.push(input2[i].value);
+        }
     }
-  }
-  if (STATE.Input2.length > 0) {
-    Error2.className = "text-danger d-none";
-    Card2.classList.add("border-success");
-    Card2.classList.remove("border-danger");
-  } else {
-    Error2.className = "text-danger d-block";
-    Card2.classList.remove("border-success");
-    Card2.classList.add("border-danger");
-  }
+    if (STATE.Input2.length > 0) {
+        Error2.className = "text-danger d-none";
+        Card2.classList.add("border-success");
+        Card2.classList.remove("border-danger");
+    } else {
+        Error2.className = "text-danger d-block";
+        Card2.classList.remove("border-success");
+        Card2.classList.add("border-danger");
+    }
 };
 const Input3Validation = () => {
-  for (var i = 0, length = input3.length; i < length; i++) {
-    if (input3[i].checked) {
-      STATE.Input3.push(input3[i].value);
+    for (var i = 0, length = input3.length; i < length; i++) {
+        if (input3[i].checked) {
+            STATE.Input3.push(input3[i].value);
+        }
     }
-  }
-  if (STATE.Input3.length > 0) {
-    Error3.className = "text-danger d-none";
-    Card3.classList.add("border-success");
-    Card3.classList.remove("border-danger");
-  } else {
-    Error3.className = "text-danger d-block";
-    Card3.classList.remove("border-success");
-    Card3.classList.add("border-danger");
-  }
+    if (STATE.Input3.length > 0) {
+        Error3.className = "text-danger d-none";
+        Card3.classList.add("border-success");
+        Card3.classList.remove("border-danger");
+    } else {
+        Error3.className = "text-danger d-block";
+        Card3.classList.remove("border-success");
+        Card3.classList.add("border-danger");
+    }
 };
 const Input4Validation = () => {
-  for (var i = 0, length = input4.length; i < length; i++) {
-    if (input4[i].checked) {
-      STATE.Input4.push(input4[i].value);
+    for (var i = 0, length = input4.length; i < length; i++) {
+        if (input4[i].checked) {
+            STATE.Input4.push(input4[i].value);
+        }
     }
-  }
-  if (STATE.Input4.length > 0) {
-    Error4.className = "text-danger d-none";
-    Card4.classList.add("border-success");
-    Card4.classList.remove("border-danger");
-  } else {
-    Error4.className = "text-danger d-block";
-    Card4.classList.remove("border-success");
-    Card4.classList.add("border-danger");
-  }
+    if (STATE.Input4.length > 0) {
+        Error4.className = "text-danger d-none";
+        Card4.classList.add("border-success");
+        Card4.classList.remove("border-danger");
+    } else {
+        Error4.className = "text-danger d-block";
+        Card4.classList.remove("border-success");
+        Card4.classList.add("border-danger");
+    }
 };
 const Input5Validation = () => {
-  for (var i = 0, length = input5.length; i < length; i++) {
-    if (input5[i].checked) {
-      STATE.Input5.push(input5[i].value);
+    for (var i = 0, length = input5.length; i < length; i++) {
+        if (input5[i].checked) {
+            STATE.Input5.push(input5[i].value);
+        }
     }
-  }
-  if (STATE.Input5.length > 0) {
-    Error5.className = "text-danger d-none";
-    Card5.classList.add("border-success");
-    Card5.classList.remove("border-danger");
-  } else {
-    Error5.className = "text-danger d-block";
-    Card5.classList.remove("border-success");
-    Card5.classList.add("border-danger");
-  }
+    if (STATE.Input5.length > 0) {
+        Error5.className = "text-danger d-none";
+        Card5.classList.add("border-success");
+        Card5.classList.remove("border-danger");
+    } else {
+        Error5.className = "text-danger d-block";
+        Card5.classList.remove("border-success");
+        Card5.classList.add("border-danger");
+    }
 };
 const Input6Validation = () => {
-  for (var i = 0, length = input6.length; i < length; i++) {
-    if (input6[i].checked) {
-      STATE.Input6.push(input6[i].value);
+    for (var i = 0, length = input6.length; i < length; i++) {
+        if (input6[i].checked) {
+            STATE.Input6.push(input6[i].value);
+        }
     }
-  }
-  if (STATE.Input6.length > 0) {
-    Error6.className = "text-danger d-none";
-    Card6.classList.add("border-success");
-    Card6.classList.remove("border-danger");
-  } else {
-    Error6.className = "text-danger d-block";
-    Card6.classList.remove("border-success");
-    Card6.classList.add("border-danger");
-  }
+    if (STATE.Input6.length > 0) {
+        Error6.className = "text-danger d-none";
+        Card6.classList.add("border-success");
+        Card6.classList.remove("border-danger");
+    } else {
+        Error6.className = "text-danger d-block";
+        Card6.classList.remove("border-success");
+        Card6.classList.add("border-danger");
+    }
 };
 
 const Input7Validation = () => {
-  if (signature.value !== "" || oImage.src !== "") {
-    Error7.className = "text-danger d-none";
-    Card7.classList.add("border-success");
-    Card7.classList.remove("border-danger");
-  } else {
-    Error7.className = "text-danger d-block";
-    Card7.classList.remove("border-success");
-    Card7.classList.add("border-danger");
-  }
-  STATE.Signature.push(signature.value);
-  STATE.SignaturePencil.push(oImage.src);
+    if (signature.value !== "" || oImage.src !== "") {
+        Error7.className = "text-danger d-none";
+        Card7.classList.add("border-success");
+        Card7.classList.remove("border-danger");
+    } else {
+        Error7.className = "text-danger d-block";
+        Card7.classList.remove("border-success");
+        Card7.classList.add("border-danger");
+    }
+    STATE.Signature.push(signature.value);
+    STATE.SignaturePencil.push(oImage.src);
 };
 
 signaturePencil.addEventListener('touch', () => {
-  const body = document.querySelector('body')
-  body.style.overflowY = 'hidden' 
+    const body = document.querySelector('body')
+    body.style.overflowY = 'hidden'
 })
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  initState();
-  Input1Validation();
-  Input2Validation();
-  Input3Validation();
-  Input4Validation();
-  Input5Validation();
-  Input6Validation();
-  Input7Validation();
+    e.preventDefault();
+    e.stopPropagation();
+    initState();
+    Input1Validation();
+    Input2Validation();
+    Input3Validation();
+    Input4Validation();
+    Input5Validation();
+    Input6Validation();
+    Input7Validation();
 
-  const error = document.querySelector(".border-danger");
-  if (error === null) {
-    displayConfirmMessage();
-  }
-  console.log(STATE);
+    const error = document.querySelector(".border-danger");
+    if (error === null) {
+        displayConfirmMessage();
+    }
+    console.log(STATE);
 });

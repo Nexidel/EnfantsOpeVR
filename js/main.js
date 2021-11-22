@@ -295,7 +295,7 @@ const Input7Validation = () => {
   STATE.SignaturePencil.push(oImage.src);
 };
 
-signaturePencil.addEventListener('click', () => {
+signaturePencil.addEventListener('touch', () => {
   const body = document.querySelector('body')
   body.style.overflowY = 'hidden' 
 })

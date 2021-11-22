@@ -295,6 +295,11 @@ const Input7Validation = () => {
   STATE.SignaturePencil.push(oImage.src);
 };
 
+signaturePencil.addEventListener('click', () => {
+  const body = document.querySelector('body')
+  body.style.overflowY = 'hidden' 
+})
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   e.stopPropagation();

@@ -1,3 +1,7 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
 .container {
     max-width: 100%;
     padding-right: 1rem;
@@ -8,13 +12,15 @@
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
 }
 
 p {
     margin-top: 0;
     margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 #form {
@@ -41,7 +47,8 @@ p {
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .03);
     border-bottom: 1px solid rgba(0, 0, 0, .125);
-    font-size: 1.2rem;
+    font-size: 1.35rem;
+    font-weight: 600;
 }
 
 .card-body {
@@ -167,202 +174,110 @@ p {
     display: none;
 }
 
-.angryFace+label {
-    background: url('../images/angryFace.png') no-repeat;
+label {
     width: 50px;
     height: 50px;
     display: inline-block;
-    padding: 0 0 0 0px;
     cursor: pointer;
 }
 
+.angryFace+label {
+    background: url('../images/angryFace.png') no-repeat;
+}
+
 .angryFace:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/angryFace.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #E74C3C;
 }
 
 .neutralFace+label {
     background: url('../images/neutralFace.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .neutralFace:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/neutralFace.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #EDA361;
 }
 
 .happyFace+label {
     background: url('../images/happyFace.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .happyFace:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/happyFace.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #2ECC71;
 }
 
 .badThumb+label {
     background: url('../images/badThumb.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .badThumb:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/badThumb.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #E74C3C;
 }
 
 .hesitatingThumb+label {
     background: url('../images/hesitatingThumb.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .hesitatingThumb:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/hesitatingThumb.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #EDA361;
 }
 
 .goodThumb+label {
     background: url('../images/goodThumb.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .goodThumb:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/goodThumb.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #2ECC71;
 }
 
 .slowTime+label {
     background: url('../images/slowTime.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .slowTime:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/slowTime.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #E74C3C;
 }
 
 .equalTime+label {
     background: url('../images/equalTime.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .equalTime:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/equalTime.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #EDA361;
 }
 
 .fastTime+label {
     background: url('../images/fastTime.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .fastTime:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/fastTime.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #2ECC71;
 }
 
 .feelsBad+label {
     background: url('../images/feelsBad.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .feelsBad:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/feelsBad.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #E74C3C;
 }
 
 .feelsGreat+label {
     background: url('../images/feelsGreat.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
 }
 
 .feelsGreat:checked+label {
-    background: url('../images/test.png') no-repeat;
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    cursor: pointer;
+    background: url('../images/feelsGreat.png') no-repeat;
+    box-shadow: 0px 0px 2px 2px #2ECC71;
 }
 
 #canvas,

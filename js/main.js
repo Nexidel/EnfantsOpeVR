@@ -119,7 +119,7 @@ const input5 = document.getElementsByName("Q5");
 const input6 = document.getElementsByName("Q6");
 
 const signature = document.getElementById("textArea");
-const signaturePencil = document.getElementById("btn_clear");
+const signaturePencil = document.getElementById("canvas");
 
 const Error1 = document.getElementById("error-1");
 const Error2 = document.getElementById("error-2");
@@ -261,15 +261,23 @@ const Input6Validation = () => {
 };
 
 const Input7Validation = () => {
-  STATE.Signature.length !== 0
-    ? (Error7.className = "text-danger d-none")
-    : (Error7.className = "text-danger d-block");
-  STATE.Signature.push(signature.value);
+  if (signature.value !== "" || signaturePencil.length > 0) {
+    Error7.className = "text-danger d-none";
+    Card7.classList.add("border-success");
+    Card7.classList.remove("border-danger");
+  } else {
+    Error7.className = "text-danger d-block";
+    Card7.classList.remove("border-success");
+    Card7.classList.add("border-danger");
+  }
+  STATE.Signature.push(signature.value)
+  // STATE.signaturePencil.push(signaturePencil.value)
 };
+console.log(signaturePencil.length)
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  e.stopPropagation()
+  e.stopPropagation();
   initState();
   Input1Validation();
   Input2Validation();

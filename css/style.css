@@ -187,7 +187,10 @@ label {
 
 .angryFace:checked+label {
     background: url('../images/angryFace.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #E74C3C;
+    /*     background-color: rgb(255, 0, 0);
+    filter: brightness(5);
+    border-radius: 100%; */
+    box-shadow: 0px 0px 4px 4px #E74C3C;
 }
 
 .neutralFace+label {
@@ -195,8 +198,8 @@ label {
 }
 
 .neutralFace:checked+label {
-    background: url('../images/neutralFace.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #EDA361;
+    background: url('../images/neutralFace.png') no-repeat, ;
+    box-shadow: 0px 0px 4px 4px #EDA361;
 }
 
 .happyFace+label {
@@ -205,7 +208,10 @@ label {
 
 .happyFace:checked+label {
     background: url('../images/happyFace.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #2ECC71;
+    /*     background-color: green;
+    filter: brightness(10);
+    border-radius: 100%; */
+    box-shadow: 0px 0px 4px 4px #2ECC71;
 }
 
 .badThumb+label {
@@ -214,7 +220,7 @@ label {
 
 .badThumb:checked+label {
     background: url('../images/badThumb.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #E74C3C;
+    box-shadow: 0px 0px 4px 4px #E74C3C;
 }
 
 .hesitatingThumb+label {
@@ -223,7 +229,7 @@ label {
 
 .hesitatingThumb:checked+label {
     background: url('../images/hesitatingThumb.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #EDA361;
+    box-shadow: 0px 0px 4px 4px #EDA361;
 }
 
 .goodThumb+label {
@@ -232,7 +238,7 @@ label {
 
 .goodThumb:checked+label {
     background: url('../images/goodThumb.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #2ECC71;
+    box-shadow: 0px 0px 4px 4px #2ECC71;
 }
 
 .slowTime+label {
@@ -241,7 +247,7 @@ label {
 
 .slowTime:checked+label {
     background: url('../images/slowTime.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #E74C3C;
+    box-shadow: 0px 0px 4px 4px #E74C3C;
 }
 
 .equalTime+label {
@@ -250,7 +256,7 @@ label {
 
 .equalTime:checked+label {
     background: url('../images/equalTime.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #EDA361;
+    box-shadow: 0px 0px 4px 4px #EDA361;
 }
 
 .fastTime+label {
@@ -259,7 +265,7 @@ label {
 
 .fastTime:checked+label {
     background: url('../images/fastTime.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #2ECC71;
+    box-shadow: 0px 0px 4px 4px #2ECC71;
 }
 
 .feelsBad+label {
@@ -268,7 +274,7 @@ label {
 
 .feelsBad:checked+label {
     background: url('../images/feelsBad.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #E74C3C;
+    box-shadow: 0px 0px 4px 4px #E74C3C;
 }
 
 .feelsGreat+label {
@@ -277,7 +283,7 @@ label {
 
 .feelsGreat:checked+label {
     background: url('../images/feelsGreat.png') no-repeat;
-    box-shadow: 0px 0px 2px 2px #2ECC71;
+    box-shadow: 0px 0px 4px 4px #2ECC71;
 }
 
 #canvas,

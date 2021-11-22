@@ -126,6 +126,19 @@ q:after {
   content: "";
   content: none;
 }
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.card-header {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -150,6 +163,6 @@ table {
 }
 
 #submit {
-	height: 50px;
-	width: 100%;
+  height: 50px;
+  width: 100%;
 }

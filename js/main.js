@@ -185,7 +185,12 @@ function InputValidationSignature(num) {
     var Carte = document.getElementById("card" + num);
     // Si oImage.src !== "" comme condition du if alors après effacement
     // du dessin on peut quand meme valider avec un dessin vide
-    if (signature.value !== "" || oImage.src !== urlcourante) {
+    // oImage.src !== urlcourante
+    if (oImage.src == urlcourante) {
+        Erreur.className = "text-danger d-block";
+        Carte.classList.remove("border-success");
+        Carte.classList.add("border-danger");
+    } else if (signature.value !== "" || oImage.src !== "") {
         Erreur.className = "text-danger d-none";
         Carte.classList.add("border-success");
         Carte.classList.remove("border-danger");

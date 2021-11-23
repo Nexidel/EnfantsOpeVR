@@ -319,12 +319,12 @@
             }
             .section2 .card {
                 width: 45%;
-                position: relative;
+                /* position: relative; */
             }
-            .section2 p {
+            /* .section2 p {
                 position: absolute;
                 bottom: 0;
-            }
+            } */
         }
         
         @media screen and (min-width: 993px) {

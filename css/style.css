@@ -110,7 +110,8 @@
         }
         
         .border-danger {
-            border-color: #dc3545 !important;
+            border: 3px solid #dc3545 !important;
+            border-color: #dc3545;
         }
         
         .border-success {

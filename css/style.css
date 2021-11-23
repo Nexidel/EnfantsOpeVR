@@ -34,7 +34,7 @@
             min-width: 0;
             width: 100%;
             word-wrap: break-word;
-            background-color: #FFF;
+            background-color: #fafafb;
             background-clip: border-box;
             border: 1px solid rgba(0, 0, 0, .125);
             border-radius: .25rem;
@@ -44,12 +44,11 @@
         
         .card-header {
             display: flex;
-            padding: .5rem 1rem;
+            padding: 1rem 1.5rem;
             margin-bottom: 0;
-            background-color: rgba(0, 0, 0, .03);
+            background-color: rgba(230, 228, 228, 0.623);
             border-bottom: 1px solid rgba(0, 0, 0, .125);
             font-size: 1.35rem;
-            font-weight: 600;
         }
         
         .QNumber {

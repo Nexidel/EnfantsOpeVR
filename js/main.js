@@ -74,6 +74,7 @@ function initCanvas() {
     oCanvas.addEventListener("touchmove", moveDrawligne);
 }
 
+var urlcourante = document.location.href;
 var oImage = document.createElement("img");
 
 function capturer(bAction) {
@@ -90,6 +91,7 @@ function nettoyer(oEvent) {
     var oCanvas = document.getElementById("canvas"),
         oCtx = oCanvas.getContext("2d");
     oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
+    oImage.src = "";
     capturer(false);
 }
 
@@ -123,7 +125,6 @@ function showText() {
 /* ---------------------------------------------------------------------------------------------- */
 
 const formulaire = document.getElementById("formulaire");
-
 const signature = document.getElementById("textArea");
 const signaturePencil = document.getElementById("canvas");
 
@@ -136,7 +137,6 @@ const STATE = {
 const initState = () => {
     STATE.Signature = [];
     STATE.SignaturePencil = [];
-
     for (i = 1; i <= 6; i++) {
         STATE.Input[i] = "";
     }
@@ -150,20 +150,17 @@ const displayConfirmMessage = () => {
     }, 3000);
 };
 
-var ancre = ""
-
+var ancre = "submit"
 
 function jump(h) {
     var top = document.getElementById(h).offsetTop;
     window.scrollTo(0, top);
 }
 
-
 function InputValidation(num) {
     var Erreur = document.getElementById("error-" + num.toString());
     var Question = document.getElementsByName("Q" + num.toString());
     var Carte = document.getElementById("card" + num.toString());
-
     flag = false
     for (var i = 0; i < Question.length; i++) {
         if (Question[i].checked) {
@@ -177,18 +174,18 @@ function InputValidation(num) {
         Erreur.className = "text-danger d-block";
         Carte.classList.remove("border-success");
         Carte.classList.add("border-danger");
-        if ((ancre == "") && (i = Question.length)) {
+        if ((ancre == "submit") && (i = Question.length)) {
             ancre = "card" + num.toString();
         }
     }
 }
 
 function InputValidationSignature(num) {
-
     Erreur = document.getElementById("error-" + num);
     var Carte = document.getElementById("card" + num);
-
-    if (signature.value !== "" || oImage.src !== "") {
+    // Si oImage.src !== "" comme condition du if alors après effacement
+    // du dessin on peut quand meme valider avec un dessin vide
+    if (signature.value !== "" || oImage.src !== urlcourante) {
         Erreur.className = "text-danger d-none";
         Carte.classList.add("border-success");
         Carte.classList.remove("border-danger");
@@ -207,7 +204,7 @@ signaturePencil.addEventListener('touch', () => {
 })
 
 formulaire.addEventListener("submit", (e) => {
-    ancre = ""
+    ancre = "submit"
     e.preventDefault();
     e.stopPropagation();
     initState();

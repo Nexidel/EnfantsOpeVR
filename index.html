@@ -112,12 +112,13 @@
             </div>
             <div id="card7" class="card">
                 <div class="card-header">
-                    <span class="QNumber">7.</span> If one of your friends asked you how your experience with the goggles was like today, how would you describe it to them? <br />
-                    <i>You can draw or write a few sentence</i>
+                    <span class="QNumber">7.</span>
+                    <div>If one of your friends asked you how your experience with the goggles was like today, how would you describe it to them? <br />
+                        <em>You can draw or write a few sentence</em></div>
                 </div>
                 <div class="card-body">
                     <input type="button" class="btn btn-grey" id="changeDraw" value="I Draw"></input>
-                    <input type="button" class="btn btn-grey" id="changeText" value="I Write"></input>
+                    <input type="button" class="btn btn-grey" id="changeText" value="I Write" onclick="showText()"></input>
                 </div>
                 <div class="block-center">
                     <canvas class="w-75 greyBorder" id="canvas"></canvas>

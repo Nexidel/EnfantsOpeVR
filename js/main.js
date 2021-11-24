@@ -1,12 +1,16 @@
 /**
  * /*  https://dev.opera.com/articles/html5-canvas-painting/
  *
- * @format
+ *
  */
 
-/* Options & Code du Canvas */
 
-/* JS Canvas ------------------------------------------------------------------------------------ */
+const formulaire = document.getElementById("formulaire");
+const signature = document.getElementById("textArea");
+const signaturePencil = document.getElementById("canvas");
+const drawArea = document.getElementById("changeDraw");
+const textArea = document.getElementById("changeText");
+const Btn_clear = document.getElementById("btn_clear");
 
 function moveDrawligne(oEvent) {
     var oCanvas = oEvent.currentTarget,
@@ -87,7 +91,11 @@ function capturer(bAction) {
     }
 }
 
-function nettoyer(oEvent) {
+/* function clearText() {
+    signature.value = "";
+} */
+
+function clearDraw() {
     var oCanvas = document.getElementById("canvas"),
         oCtx = oCanvas.getContext("2d");
     oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
@@ -97,36 +105,10 @@ function nettoyer(oEvent) {
 
 document.addEventListener("DOMContentLoaded", function() {
     initCanvas();
-    document.getElementById("btn_clear").addEventListener("click", nettoyer);
+    document.getElementById("btn_clear").addEventListener("click", clearDraw);
 });
 
 /* ---------------------------------------------------------------------------------------------- */
-
-/* fonction show canvas or areatext*/
-
-function showDraw() {
-    var draw = document.getElementById("canvas");
-    var text = document.getElementById("textArea");
-    var clear = document.getElementById("btn_clear");
-    draw.style.display = "block";
-    text.style.display = "none";
-    clear.style.display = "block";
-}
-
-function showText() {
-    var text = document.getElementById("textArea");
-    var draw = document.getElementById("canvas");
-    var clear = document.getElementById("btn_clear");
-    text.style.display = "block";
-    draw.style.display = "none";
-    clear.style.display = "none";
-}
-
-/* ---------------------------------------------------------------------------------------------- */
-
-const formulaire = document.getElementById("formulaire");
-const signature = document.getElementById("textArea");
-const signaturePencil = document.getElementById("canvas");
 
 const STATE = {
     Input: [],
@@ -185,7 +167,14 @@ function InputValidationSignature(num) {
     var Carte = document.getElementById("card" + num);
     // Si oImage.src !== "" comme condition du if alors après effacement
     // du dessin on peut quand meme valider avec un dessin vide
-    if (signature.value !== "" || oImage.src !== urlcourante) {
+    // oImage.src !== urlcourante
+
+    // PROBLEME LA 
+
+    if (oImage.src == "") {
+        Erreur.className = "text-danger d-none";
+        Carte.classList.add("border-danger");
+    } else if (signature.value !== "" || oImage.src !== urlcourante) {
         Erreur.className = "text-danger d-none";
         Carte.classList.add("border-success");
         Carte.classList.remove("border-danger");
@@ -194,6 +183,7 @@ function InputValidationSignature(num) {
         Carte.classList.remove("border-success");
         Carte.classList.add("border-danger");
     }
+
     STATE.Signature.push(signature.value);
     STATE.SignaturePencil.push(oImage.src);
 };
@@ -201,6 +191,26 @@ function InputValidationSignature(num) {
 signaturePencil.addEventListener('touch', () => {
     const body = document.querySelector('body')
     body.style.overflowY = 'hidden'
+})
+
+
+
+drawArea.addEventListener("click", function() {
+    signature.value = "";
+    signaturePencil.style.display = "block";
+    signature.style.display = "none";
+    Btn_clear.style.display = "block";
+})
+
+textArea.addEventListener("click", function() {
+    var oCanvas = document.getElementById("canvas"),
+        oCtx = oCanvas.getContext("2d");
+    oCtx.clearRect(0, 0, oCanvas.width, oCanvas.height);
+    oImage.src = "";
+    capturer(false);
+    signaturePencil.style.display = "none";
+    signature.style.display = "block";
+    Btn_clear.style.display = "none";
 })
 
 formulaire.addEventListener("submit", (e) => {
@@ -212,7 +222,6 @@ formulaire.addEventListener("submit", (e) => {
         InputValidation(i);
     }
     InputValidationSignature(7);
-
     const error = document.querySelector(".border-danger");
     if (error === null) {
         displayConfirmMessage();

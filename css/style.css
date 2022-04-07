@@ -149,6 +149,14 @@
             height: 50px;
             width: 100%;
         }
+
+        .text-intro {
+            color: rgb(73, 105, 163);
+            font-size: 1.25em;
+            margin: 1rem 5rem 3rem;
+            text-align: center;
+            font-weight: bold;
+        }
         
         .noselect {
             -webkit-touch-callout: none;

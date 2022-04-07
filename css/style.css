@@ -152,9 +152,9 @@
 
         .text-intro {
             color: rgb(73, 105, 163);
-            font-size: 1.25em;
-            margin: 1rem 5rem 3rem;
-            text-align: center;
+            font-size: 1em;
+            margin: 1rem 1rem 3rem;
+            text-align: justify;
             font-weight: bold;
         }
         

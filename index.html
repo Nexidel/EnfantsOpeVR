@@ -33,7 +33,8 @@
             <div class="section1">
                 <div id="card1" class="card">
                     <div class="card-header">
-                        <span class="QNumber">1- </span>Comment te sens-tu par rapport à l’aventure en réalité virtuelle (casque) que tu vas essayer aujourd’hui ?
+                        <span class="QNumber">1- </span>Comment te sens-tu par rapport à l’aventure en réalité virtuelle
+                        (casque) que tu vas essayer aujourd’hui ?
                     </div>
                     <div class="card-body d-flex text-center justify-content-around form-check Question noselect">
                         <input class="angryFace" type="radio" id="angryQ1" name="Q1" />
@@ -50,7 +51,8 @@
             <div class="section2">
                 <div id="card2" class="card">
                     <div class="card-header">
-                        <span class="QNumber">2- </span>À quel point as-tu aimé cette aventure en réalité virtuelle (casque) aujourd’hui ?
+                        <span class="QNumber">2- </span>À quel point as-tu aimé cette aventure en réalité virtuelle
+                        (casque) aujourd’hui ?
                     </div>
                     <div class="card-body d-flex text-center justify-content-around  Question noselect">
                         <input class="angryFace" type="radio" id="angryQ2" name="Q2" />
@@ -64,57 +66,123 @@
                 </div>
                 <div id="card3" class="card">
                     <div class="card-header">
-                        <span class="QNumber">3- </span>Quand tu reviendras à l'hôpital, est-ce que tu aimerais revivre cette aventure en réalité virtuelle (casque) ?
+                        <span class="QNumber">3- </span>Quand tu reviendras à l'hôpital, est-ce que tu aimerais revivre
+                        cette aventure en réalité virtuelle (casque) ?
                     </div>
                     <div class="card-body d-flex text-center justify-content-around  Question noselect">
-                        <input class="badThumb" type="radio" id="badThumbQ3" name="Q3" />
-                        <label for="badThumbQ3"></label>
-                        <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ3" name="Q3" />
-                        <label for="hesitatingThumbQ3"></label>
-                        <input class="goodThumb" type="radio" id="goodThumbQ3" name="Q3" />
-                        <label for="goodThumbQ3"></label>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="badThumb" type="radio" id="badThumbQ3" name="Q3" />
+                                <label for="badThumbQ3"></label>
+                            </div>
+                            <span><b>Non</b></span>
+                        </div>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ3" name="Q3" />
+                                <label for="hesitatingThumbQ3"></label>
+                            </div>
+                            <span><b>Pas sûr</b></span>
+                        </div>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="goodThumb" type="radio" id="goodThumbQ3" name="Q3" />
+                                <label for="goodThumbQ3"></label>
+                            </div>
+                            <span><b>Oui</b></span>
+                        </div>
                     </div>
                     <p id="error-3" class="text-danger d-none"><small>Merci de sélectionner une image</small></p>
                 </div>
                 <div id="card4" class="card">
                     <div class="card-header">
-                        <span class="QNumber">4- </span>Par rapport à tes piqûres précédentes à l’hôpital, tu dirais que le temps t’a semblé ...
+                        <span class="QNumber">4- </span>Par rapport à tes piqûres précédentes à l’hôpital, tu dirais que
+                        le temps t’a semblé ...
                     </div>
                     <div class="card-body d-flex text-center justify-content-around  Question noselect">
-                        <input class="slowTime" type="radio" id="slowTimeQ4" name="Q4" />
-                        <label for="slowTimeQ4"></label>
-                        <input class="equalTime" type="radio" id="equalTimeQ4" name="Q4" />
-                        <label for="equalTimeQ4"></label>
-                        <input class="fastTime" type="radio" id="fastTimeQ4" name="Q4" />
-                        <label for="fastTimeQ4"></label>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="slowTime" type="radio" id="slowTimeQ4" name="Q4" />
+                                <label for="slowTimeQ4"></label>
+                            </div>
+                            <span><b>Plus lent</b></span>
+                        </div>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="equalTime" type="radio" id="equalTimeQ4" name="Q4" />
+                                <label for="equalTimeQ4"></label>
+                            </div>
+                            <span><b>Même temps</b></span>
+                        </div>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="fastTime" type="radio" id="fastTimeQ4" name="Q4" />
+                                <label for="fastTimeQ4"></label>
+                            </div>
+                            <span><b>Plus rapide</b></span>
+                        </div>
                     </div>
                     <p id="error-4" class="text-danger d-none"><small>Merci de sélectionner une image</small></p>
                 </div>
                 <div id="card5" class="card">
                     <div class="card-header">
-                        <span class="QNumber">5- </span>Qu’est-ce que tu as ressenti pour ta piqûre lors de cette visite, par rapport à ta visite précédente ?
+                        <span class="QNumber">5- </span>Qu’est-ce que tu as ressenti pour ta piqûre lors de cette
+                        visite, par rapport à ta visite précédente ?
                     </div>
                     <div class="card-body d-flex text-center justify-content-around  Question noselect">
-                        <input class="feelsBad" type="radio" id="feelsBadQ5" name="Q5" />
-                        <label for="feelsBadQ5"></label>
-                        <input class="neutralFace" type="radio" id="neutralFaceQ5" name="Q5" />
-                        <label for="neutralFaceQ5"></label>
-                        <input class="feelsGreat" type="radio" id="feelsGreatQ5" name="Q5" />
-                        <label for="feelsGreatQ5"></label>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="feelsBad" type="radio" id="feelsBadQ5" name="Q5" />
+                                <label for="feelsBadQ5"></label>
+                            </div>
+                            <span><b>Plus nerveux</b></span>
+                        </div>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="neutralFace" type="radio" id="neutralFaceQ5" name="Q5" />
+                                <label for="neutralFaceQ5"></label>
+                            </div>
+                            <span><b>Comme la dernière fois</b></span>
+                        </div>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="feelsGreat" type="radio" id="feelsGreatQ5" name="Q5" />
+                                <label for="feelsGreatQ5"></label>
+                            </div>
+                            <span><b>Moins peur</b></span>
+                        </div>
                     </div>
                     <p id="error-5" class="text-danger d-none"><small>Merci de sélectionner une image</small></p>
                 </div>
                 <div id="card6" class="card">
                     <div class="card-header">
-                        <span class="QNumber">6- </span>Est-ce que tu voudrais que les autres enfants qui viennent à l’hôpital essayent aussi cette aventure en réalité virtuelle (casque) ?
+                        <span class="QNumber">6- </span>Est-ce que tu voudrais que les autres enfants qui viennent à
+                        l’hôpital essayent aussi cette aventure en réalité virtuelle (casque) ?
                     </div>
                     <div class="card-body d-flex text-center justify-content-around  Question noselect">
-                        <input class="badThumb" type="radio" id="badThumbQ6" name="Q6" />
-                        <label for="badThumbQ6"></label>
-                        <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ6" name="Q6" />
-                        <label for="hesitatingThumbQ6"></label>
-                        <input class="goodThumb" type="radio" id="goodThumbQ6" name="Q6" />
-                        <label for="goodThumbQ6"></label>
+                        <div class="d-flex column">
+                            <div>
+                                <input class="badThumb" type="radio" id="badThumbQ6" name="Q6" />
+                                <label for="badThumbQ6"></label>
+                            </div>
+                            <span><b>Non</b></span>
+                        </div>
+
+                        <div class="d-flex column">
+                            <div>
+                                <input class="hesitatingThumb" type="radio" id="hesitatingThumbQ6" name="Q6" />
+                                <label for="hesitatingThumbQ6"></label>
+                            </div>
+                            <span><b>Pas sûr</b></span>
+                        </div>
+
+                        <div class="d-flex column">
+                            <div>
+                                <input class="goodThumb" type="radio" id="goodThumbQ6" name="Q6" />
+                                <label for="goodThumbQ6"></label>
+                            </div>
+                            <span><b>Oui</b></span>
+                        </div>
                     </div>
                     <p id="error-6" class="text-danger d-none"><small>Merci de sélectionner une image</small></p>
                 </div>
@@ -122,8 +190,10 @@
             <div id="card7" class="card">
                 <div class="card-header">
                     <span class="QNumber">7- </span>
-                    <div>Si l’un de tes amis te demandait à quoi ressemblait ton aventure en réalité virtuelle (casque) aujourd’hui, comment est-ce que tu la décrirais ? <br />
-                        <em>Tu peux dessiner ou écrire quelques phrases.</em></div>
+                    <div>Si l’un de tes amis te demandait à quoi ressemblait ton aventure en réalité virtuelle (casque)
+                        aujourd’hui, comment est-ce que tu la décrirais ? <br />
+                        <em>Tu peux dessiner ou écrire quelques phrases.</em>
+                    </div>
                 </div>
                 <div class="card-body">
                     <input type="button" class="btn btn-grey" id="changeDraw" value="Dessiner" />
@@ -131,14 +201,16 @@
                 </div>
                 <div class="block-center">
                     <canvas class="w-75 greyBorder" id="canvas"></canvas>
-                    <textarea class="w-75 greyBorder" name="text_Area" id="textArea" placeholder="Ecrire ici !"></textarea>
+                    <textarea class="w-75 greyBorder" name="text_Area" id="textArea"
+                        placeholder="Ecrire ici !"></textarea>
                 </div>
                 <div class="card-body">
                     <input type="button" id="btn_clear" class="btn btn-grey" value="Effacer" />
                 </div>
                 <p id="error-7" class="text-danger d-none"><small>Veuilez répondre à la question</small></p>
             </div>
-            <div class="confirmation">Merci pour ta participation<br />Questionnaire à rendre à la personne qui te l’a remis.</div>
+            <div class="confirmation">Merci pour ta participation<br />Questionnaire à rendre à la personne qui te l’a
+                remis.</div>
             <div>
                 <input type="submit" id="submit" class="btn" value="Envoyer" />
             </div>
@@ -147,8 +219,12 @@
     <footer>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js" integrity="sha512-Hx7mfz/FnwNfy+erC6kvUftuP4gdTf/qNnDjLOcbQuHR9b8xZn2cWZ8GbdgCWZx5VpbxUZ2UzJWBl/vukUJ68A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"
+        integrity="sha512-Hx7mfz/FnwNfy+erC6kvUftuP4gdTf/qNnDjLOcbQuHR9b8xZn2cWZ8GbdgCWZx5VpbxUZ2UzJWBl/vukUJ68A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/main.js"></script>
 
 </body>

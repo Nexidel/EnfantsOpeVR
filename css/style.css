@@ -62,7 +62,7 @@
             justify-content: space-around;
             padding: 1rem 1rem;
         }
-        
+
         [type=button],
         [type=submit] {
             cursor: pointer;
@@ -156,6 +156,14 @@
             margin: 1rem 1rem 3rem;
             text-align: justify;
             font-weight: bold;
+        }
+        
+        .column {
+            flex-direction: column;
+        }
+
+        .column span {
+            margin-top: .5rem;
         }
         
         .noselect {
